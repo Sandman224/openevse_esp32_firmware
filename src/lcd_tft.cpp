@@ -358,7 +358,7 @@ unsigned long LcdTask::loop(MicroTasks::WakeReason reason)
       render_image(car_icon.c_str(), 16, 92);
       render_image(wifi_icon.c_str(), 16, 132);
 
-      snprintf(buffer, sizeof(buffer), "%d", _evse->getChargeCurrent());
+      snprintf(buffer, sizeof(buffer), "%d", _evse->getAmps());
       render_right_text_box(buffer, 66, 175, 154, &FreeSans24pt7b, TFT_BLACK, TFT_WHITE, !_full_update, 2);
       if(_full_update) {
         render_left_text_box("A", 224, 165, 34, &FreeSans24pt7b, TFT_BLACK, TFT_WHITE, false, 1);
